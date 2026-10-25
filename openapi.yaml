@@ -1,0 +1,107 @@
+openapi: 3.0.3
+info:
+  title: Альфа.Больше — Synthetic Demo API
+  version: 0.1.0
+  description: >
+    Local-only educational API. There is NO authentication and NO access to real bank or
+    government systems. Use synthetic data exclusively; do not expose publicly.
+servers:
+  - url: http://localhost:8080
+paths:
+  /health:
+    get:
+      summary: Check demo server health
+      responses:
+        '200':
+          description: Ready
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status: {type: string, example: ok}
+                  demo: {type: boolean, example: true}
+  /api/company:
+    get:
+      summary: Find an invented company by demonstration INN
+      parameters:
+        - name: inn
+          in: query
+          required: true
+          schema: {type: string, example: '0000000000'}
+      responses:
+        '200':
+          description: Synthetic company data, NOT real registry
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  synthetic: {type: boolean}
+                  fields:
+                    type: object
+                    additionalProperties:
+                      $ref: '#/components/schemas/SourceFact'
+        '400': {description: Bad INN format or check digit}
+        '404': {description: Not present in the synthetic registry}
+  /api/applications:
+    get:
+      summary: List shared synthetic applications (demo only)
+      responses:
+        '200':
+          description: Application array
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  synthetic: {type: boolean}
+                  applications:
+                    type: array
+                    items: {$ref: '#/components/schemas/Application'}
+    post:
+      summary: Upsert a synthetic application by ID (demo only)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {$ref: '#/components/schemas/Application'}
+      responses:
+        '200':
+          description: Saved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ok: {type: boolean}
+                  id: {type: string}
+        '400': {description: Invalid payload}
+        '413': {description: Payload too large}
+components:
+  schemas:
+    SourceFact:
+      type: object
+      required: [value, source]
+      properties:
+        value: {oneOf: [{type: string}, {type: number}]}
+        source: {type: string}
+        evidence: {type: string}
+        period: {type: string}
+    Application:
+      type: object
+      description: >
+        Simplified client state snapshot. Server stores and returns it; financial calculations
+        and demo transition rules are implemented on the client. NOT safe for real bank data.
+      required: [id, profile]
+      properties:
+        id: {type: string}
+        profile: {type: object, additionalProperties: true}
+        history:
+          type: array
+          items: {type: object, additionalProperties: true}
+        status: {type: string}
+        amount: {type: number}
+        term: {type: integer}
+        product: {type: string}
+      additionalProperties: true

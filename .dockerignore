@@ -1,0 +1,15 @@
+.git
+.gitignore
+_export
+docs
+tests
+__pycache__
+*.pyc
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+.env*
+*.zip
+README.md
+THIRD_PARTY_NOTICES
+openapi.yaml

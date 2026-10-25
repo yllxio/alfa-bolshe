@@ -1,0 +1,13 @@
+services:
+  alfa-bolshe:
+    build: .
+    ports:
+      - "127.0.0.1:8080:8080"
+    environment:
+      PORT: "8080"
+      ALFA_DB_PATH: /data/alfa-bolshe.sqlite
+    volumes:
+      - alfa_demo_data:/data
+    restart: unless-stopped
+volumes:
+  alfa_demo_data:

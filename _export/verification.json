@@ -1,0 +1,56 @@
+[
+  {
+    "file": "app.js",
+    "size": 96985,
+    "sha256": "45d9061b600408a38f9b7d7fea5fb93fc0c495ac150f3c249a513db9c4851315",
+    "matches_live": true
+  },
+  {
+    "file": "business-data.js",
+    "size": 7481,
+    "sha256": "6c116b2959ca2535970eaa9c0be62619e3848d1c8eecc4b76a1faf70ec853912",
+    "matches_live": true
+  },
+  {
+    "file": "index.html",
+    "size": 2982,
+    "sha256": "9c70388cbc175e79cd398f1030a365c94ff0b03aceb1e3cb54a3cf88300a843c",
+    "matches_live": true
+  },
+  {
+    "file": "passport.js",
+    "size": 23960,
+    "sha256": "9a9aba088b9bb00875ded7e140147450ceea5e38cc89fc9cbc2fc81ed0f48837",
+    "matches_live": true
+  },
+  {
+    "file": "product-rules.js",
+    "size": 10926,
+    "sha256": "0fac08d6c3f8f965d7a10a25e43932adfd818698ebe7909be0de14acae0a84e9",
+    "matches_live": true
+  },
+  {
+    "file": "redesign.js",
+    "size": 6873,
+    "sha256": "d2756db7fad8d55a76ddd809987b7dd2567e840e30f073ec8d3e0ea3b4bd0403",
+    "matches_live": true
+  },
+  {
+    "file": "style.css",
+    "size": 34640,
+    "sha256": "32a0bd4cc822cbaedb0f5b435818c9dfc443a5de05c6780423f7b09786395072",
+    "matches_live": true
+  },
+  {
+    "file": "vendor/pdf.mjs",
+    "size": 658371,
+    "sha256": "a209a2124baa35cbb9015b809926f1bcec9dd1c247296290e205dd9d76cb9128",
+    "matches_live": true
+  },
+  {
+    "file": "vendor/pdf.worker.mjs",
+    "size": 2209730,
+    "sha256": "7c237f83fa56bce645d8af51d183c9c56ba7b2d2928ff42754dc7020bea36323",
+    "matches_live": true
+  }
+]

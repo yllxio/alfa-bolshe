@@ -1,0 +1,27 @@
+Alfa.Bolshe — Third Party Notices / Сторонние компоненты
+
+1. PDF.js v4.10.38
+   Files: vendor/pdf.mjs, vendor/pdf.worker.mjs
+   Original project: https://github.com/mozilla/pdf.js
+   License: Apache License 2.0
+   Note: Included as prebuilt client-side binaries in the user-provided project archive.
+   Check actual distribution notices when redistributing these files.
+
+2. Python 3.12.12 base image (Docker)
+   Image: python:3.12.12-slim-bookworm
+   License: see Python Software Foundation License and Debian base image terms.
+   Dependencies: Python standard library only; no pip packages are installed.
+
+3. Original HTML, CSS and JavaScript front-end
+   Source: user-provided alfa-bolshe-original(1).zip, exported from a ChatGPT site.
+   Rights and third-party origin of any embedded content must be verified by the submitter.
+
+4. Synthetic integrations
+   /api/company — local simulated registry for exactly two invented INNs.
+   /api/applications — locally persisted synthetic application data (SQLite).
+   FNS, EGRUL/EGRIP, BKI, bank internal APIs, signing, bank transfers: NOT CONNECTED.
+   Product interest rates and banking products: DEMONSTRATION VALUES.
+
+5. LLM
+   No real LLM model is shipped; chat responses are rule-based in app.js.
+   The competition permits only open-weight LLMs if a language model is later added.

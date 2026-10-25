@@ -1,0 +1,11 @@
+{
+  "info": {"name": "Alfa.Bolshe Synthetic Demo API", "_postman_id": "alfa-bolshe-local-demo", "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"},
+  "variable": [{"key": "baseUrl", "value": "http://localhost:8080"}],
+  "item": [
+    {"name": "Health", "request": {"method": "GET", "url": "{{baseUrl}}/health"}},
+    {"name": "Find fictional LLC", "request": {"method": "GET", "url": "{{baseUrl}}/api/company?inn=0000000000"}},
+    {"name": "Find fictional sole trader", "request": {"method": "GET", "url": "{{baseUrl}}/api/company?inn=000000000000"}},
+    {"name": "List demo applications", "request": {"method": "GET", "url": "{{baseUrl}}/api/applications"}},
+    {"name": "Create or update demo application", "request": {"method": "POST", "header": [{"key": "Content-Type", "value": "application/json"}], "body": {"mode": "raw", "raw": "{\"id\":\"DEMO-001\",\"profile\":{\"name\":\"ООО Тест\",\"inn\":\"0000000000\"},\"amount\":1000000,\"term\":36,\"product\":\"Кредиты для бизнеса\",\"status\":\"Отправлена\",\"history\":[]}"}, "url": "{{baseUrl}}/api/applications"}}
+  ]
+}

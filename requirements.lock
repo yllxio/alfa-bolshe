@@ -1,0 +1,2 @@
+# Python 3.12.15 runtime is fixed in Dockerfile.
+# No third-party Python libraries: server.py uses only the Python standard library.
